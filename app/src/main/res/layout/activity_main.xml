@@ -5,23 +5,109 @@
     android:layout_height="match_parent"
     tools:context="org.example.canvasdemo.MainActivity" >
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Move"
-        android:id="@+id/moveButton"/>
-    <TextView
+        android:text="@string/new_game"
+        android:id="@+id/newGame"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/points" />
+        android:text="@string/pause"
+        android:id="@+id/pauseGame"/>
+
+    <TextView
+        android:id="@+id/roundView"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time left: "
+        />
+
+    <TextView
+        android:id="@+id/pointView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coins: 0"
+        />
+
+    </LinearLayout>
 
     <!-- Notice how the custom view is referenced here with
     a full package path-->
     <org.example.canvasdemo.MyView
         android:id="@+id/gameView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        >
+
+
     </org.example.canvasdemo.MyView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+
+    <RelativeLayout
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upbtn"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/upButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/downbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/upButton"
+        android:id="@+id/downButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leftbtn"
+        android:layout_alignBottom="@id/downButton"
+        android:layout_toLeftOf="@id/downButton"
+        android:id="@+id/leftButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rightbtn"
+        android:layout_toRightOf="@id/downButton"
+        android:layout_alignBottom="@id/downButton"
+        android:id="@+id/rightButton"/>
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/timerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        />
+
+    </LinearLayout>
 
 </LinearLayout>
